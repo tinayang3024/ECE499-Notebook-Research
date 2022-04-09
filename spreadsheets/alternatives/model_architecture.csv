@@ -1,0 +1,10 @@
+﻿embedding,1,,,,,
+try different models,4,,,,,
+stack models,16,18,19,28,30,34
+lr_scheduler,11,,,,,
+pooling layer,12,,,,,
+droupout layer,1,,,,,
+dense layer,1,,,,,
+GRU layer,1,,,,,
+estimator,33,,,,,
+,,,,,,
