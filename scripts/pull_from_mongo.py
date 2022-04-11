@@ -5,7 +5,7 @@ import os
 # this script pulls a list of existing attributes in the mongodb database for each type of changes
 
 # input
-output_path = "./new_cv"
+output_path = "./new_nlp"
 
 
 # script
@@ -49,12 +49,13 @@ with open(data_prepro_file, 'w') as f:
     for line in data_prepro:
         f.write(line + ", \n")
         f.write(",\n")
-# with open(data_cleaning_file, 'w') as f:
-#     for line in data_cleaning:
-#         f.write(line + ", \n")
-# with open(hyperparameter_file, 'w') as f:
-#     for line in hyperparameter:
-#         f.write(line + ", \n")
-# with open(model_arc_file, 'w') as f:
-#     for line in model_arc:
-#         f.write(line + ", \n")
+with open(data_cleaning_file, 'w') as f:
+    for line in data_cleaning:
+        f.write(line + ", \n")
+        f.write(",\n")
+with open(hyperparameter_file, 'w') as f:
+    for line in hyperparameter:
+        f.write(line + ", \n")
+with open(model_arc_file, 'w') as f:
+    for line in model_arc:
+        f.write(line + ", \n")

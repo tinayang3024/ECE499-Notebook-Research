@@ -3,9 +3,11 @@ from pymongo import MongoClient
 
 cluster = MongoClient("mongodb+srv://research:research@kagglenotebookanalysis.lbykx.mongodb.net/test")
 db = cluster["NotebookAlternatives"]
-collection = db["Hyperparameter"]
+# collection = db["Hyperparameter"]
+collection = db["ModelArchitecture"]
 
-fp = "../spreadsheets/alternatives/new_cv/hyperparameter_new.csv"
+# fp = "../spreadsheets/alternatives/new_cv/hyperparameter_new.csv"
+fp = "../spreadsheets/alternatives/new_cv/model_arc_new.csv"
 
 with open(fp, 'r', encoding='utf8') as f:
     for line in f:

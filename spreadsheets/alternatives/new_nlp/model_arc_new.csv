@@ -1,0 +1,18 @@
+add early stopping, ,
+nn layer output size, ,
+dense layer,247,248
+embedding,247,
+GRU layer, ,
+estimator, ,
+try different models, ,
+stack models,248,
+lr_scheduler, ,
+pooling layer,247,
+droupout layer,247,248
+freeze a set of layers during training, ,
+sigmoid layer,245,
+softmax layer,245,
+edit dimension of hidden layer,246,247
+LSTM layer,246,
+optimizer,248,
+normalization,248,

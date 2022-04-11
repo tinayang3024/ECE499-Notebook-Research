@@ -4,10 +4,11 @@ from pymongo import MongoClient
 
 cluster = MongoClient("mongodb+srv://research:research@kagglenotebookanalysis.lbykx.mongodb.net/test")
 db = cluster["NotebookAlternatives"]
-collection = db["DataPreprocessing"]
+# collection = db["DataPreprocessing"]
+collection = db["DataCleaning"]
 
-fp = "../spreadsheets/alternatives/new_cv/data_preprocessing_new.csv"
-
+# fp = "../spreadsheets/alternatives/new_cv/data_preprocessing_new.csv"
+fp = "../spreadsheets/alternatives/new_cv/data_cleaning_new.csv"
 
 isID = True
 with open(fp, 'r', encoding='utf8') as f:
@@ -36,5 +37,5 @@ with open(fp, 'r', encoding='utf8') as f:
                 data["Version ID"] = "latest"
                 data["Line Number"] = lines[i]
                 print(data)
-                # collection.insert_one(data)
+                collection.insert_one(data)
         isID = not isID
