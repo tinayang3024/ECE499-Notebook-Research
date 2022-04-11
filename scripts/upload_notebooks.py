@@ -5,17 +5,16 @@ cluster = MongoClient("mongodb+srv://research:research@kagglenotebookanalysis.lb
 db = cluster["NotebookAlternatives"]
 collection = db["NotebookInfo"]
 
-fp = "../spreadsheets/samples/new_cv_samples.csv"
+fp = "../spreadsheets/samples_notebook_list/new_nlp_samples.csv"
 
-notbook_ids = ["103", "105", "109", "114", "122", "128", "137", "139", "140"]
+notbook_ids = ["239", "242", "245", "246", "247", "248", "250", "251", "252"]
 with open(fp, 'r', encoding='utf8') as f:
     for line in f:
         words = line.split(",")
-        id = words[0].strip()
         data = {}
-        data["Notebook ID"] = words[-5].strip()
+        data["Notebook ID"] = words[0].strip()
         if  data["Notebook ID"] in notbook_ids:
-            data["General Topic"] = "CV"
-            data["Notebook Link"] = words[0].strip()
+            data["General Topic"] = "NLP"
+            data["Notebook Link"] = words[1].strip()
             print(data)
             # collection.insert_one(data)
