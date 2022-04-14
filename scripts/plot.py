@@ -59,8 +59,8 @@ fig = plt.figure(figsize = (8, 10))
 
 #  Bar plot
 plt.barh(courses, values, align='center')
-plt.xlabel("Number of Notebooks", fontsize=10)
-plt.ylabel("Changes", fontsize=10)
+plt.xlabel("Number of Notebooks", fontsize=20)
+plt.ylabel("Changes", fontsize=20)
 plt.title("Hyperparameter")
 plt.show()
 fig.tight_layout()

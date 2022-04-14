@@ -71,15 +71,41 @@ def load_alternatives(alt_type, notebookinfo):
         sorted_alt[k] = dict(sorted(v.items(), key=lambda item: item[1], reverse=True))
     return sorted_alt
 
+def print_stat(type_, data):
+    print("type: " + str(type_))
+    for topic, counter in data.items():
+        print("topic: " + topic)
+        sum_ = 0
+        for key, val in counter.items():
+            sum_ += val
+        print("count: " + str(sum_))
+        print("----------------------")
+    print("==========================")
+
+def print_most_freq(type_, data):
+    print("type: " + str(type_))
+    for topic, counter in data.items():
+        print("topic: " + topic)
+        sorted_counter = dict(sorted(counter.items(), key=lambda item: item[1], reverse=True))
+        i = 0
+        for key, val in sorted_counter.items():
+            i += 1
+            if i > 3:
+                break
+            print("key: " + str(key))
+        print("----------------------")
+    print("==========================")
+
 def plot_seperate_alt(type_, data):
     for topic, counter in data.items():
-        courses = list(counter.keys())
+        courses = list(key[:20] + "..." if len(key) > 20 else key for key in counter.keys())
         values = list(counter.values())
         fig = plt.figure(figsize = (8, 10))
         plt.barh(courses, values, align='center')
-        plt.xlabel("Number of Notebooks", fontsize=10)
-        plt.ylabel("Changes", fontsize=10)
-        plt.title(topic + ": " + type_)
+        plt.xlabel("Number of Notebooks", fontsize=20)
+        plt.ylabel("Changes", fontsize=20)
+        plt.yticks(fontsize=15)
+        plt.title(topic + ": " + type_,  fontsize=20)
         plt.show()
         fig.tight_layout()
         fig.savefig(os.path.join(output_path, '{}.jpg'.format(topic + "_" + type_)))
@@ -92,6 +118,18 @@ alt_ma = load_alternatives("ModelArchitecture", notebookinfo)
 alt_h = load_alternatives("Hyperparameter", notebookinfo)
 alt_dp = load_alternatives("DataPreprocessing", notebookinfo)
 alt_c = load_alternatives("DataCleaning", notebookinfo)
+
+# print("**** Start Printing Stats ****")
+# print_stat("ModelArchitecture", alt_ma)
+# print_stat("Hyperparameter", alt_h)
+# print_stat("DataCleaning", alt_c)
+# print_stat("DataPreprocessing", alt_dp)
+
+# print("**** Start Printing Stats ****")
+# print_most_freq("ModelArchitecture", alt_ma)
+# print_most_freq("Hyperparameter", alt_h)
+# print_most_freq("DataCleaning", alt_c)
+# print_most_freq("DataPreprocessing", alt_dp)
 
 # print("**** Start Plotting Alternatives ****")
 plot_seperate_alt("ModelArchitecture", alt_ma)

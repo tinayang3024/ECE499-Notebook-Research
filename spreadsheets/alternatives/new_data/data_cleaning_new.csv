@@ -1,0 +1,37 @@
+Convert Image Size,351,291,258
+,138,126-137,271-276
+Central/Random Crop, ,,
+,,,
+Remove Duplicate Columns/Data, ,,
+,,,
+Cutout, ,,
+,,,
+Remove Punctuations,253,297,287
+,147-151,183-190,89-92
+Remove HTML tags, ,,
+,,,
+Text Tokenization,253,297,287
+,138,333-337,197-213
+remove hashtags, ,,
+,,,
+remove urls, ,,
+,,,
+Drop Sparse Data, ,,
+,,,
+Spelling Correction, ,,
+,,,
+Convert to lowercase ,297,,
+,210-217,,
+Fill missing data, ,,
+,,,
+Drop unrelated features, ,,
+,,,
+Filter non-string words, ,,
+,,,
+Remove Emoji, ,,
+,,,
+Break down timestamp data, ,,
+,,,
+remove numbers,297,,
+,191-196,,
+Remove Constant Features, ,,

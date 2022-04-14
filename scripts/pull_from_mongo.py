@@ -2,10 +2,10 @@ import pymongo
 from pymongo import MongoClient
 import os
 
-# this script pulls a list of existing attributes in the mongodb database for each type of changes
+# this script pulls a list of existing attributes in the mongodb database for each type of alternatives
 
 # input
-output_path = "./new_nlp"
+output_path = "./new_data"
 
 
 # script
